@@ -1,2 +1,2 @@
 # Project-Euler-1
-Attemp Problem 1
+Attempt Problem 1
