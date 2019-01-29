@@ -1,0 +1,110 @@
+#include "pch.h"
+# include <iostream>
+# include <string>
+using namespace std;
+int main()
+{
+
+	string Ones[9] = { "one","two","three","four","five","six","seven","eight","nine" };
+	string FirstTens[10] = { "ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen" };
+	string Tens[8] = { "twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety" };
+	string Hundred[9] = { "onehundred","twohundred","threehundred","fourhundred","fivehundred","sixhundred","sevenhundred","eighthundred","ninehundred" };
+	string Connect;
+
+	int sumOnes = 0;
+	int sumFTens = 0;
+	int sumTens = 0;
+	int sumRTens = 0;
+	int sumH = 0;
+	int sumHWO = 0;
+	int sumHT = 0;
+	int sumHFT = 0;
+	int sumRestH = 0;
+	int Total = 0;
+
+	for (int i = 0; i < 9; i++)
+		sumOnes = sumOnes + Ones[i].length();
+
+	cout << "Sum of Ones (1,2,3....9 ) = " << sumOnes << endl;
+
+	for (i = 0; i < 10; i++)
+		sumFTens = sumFTens + FirstTens[i].length();
+
+	cout << "Sum of First Tens (10,11,12,...19) = " << sumFTens << endl;
+
+
+	for (i = 0; i < 8; i++)
+		sumTens = sumTens + Tens[i].length();
+
+	cout << "Sum of all Tens (20,30,40,...90) = " << sumTens << endl;
+
+
+	for (int a = 0; a < 8; a++)
+	{
+		for (int b = 0; b < 9; b++)
+		{
+			Connet = Tens[a] + Ones[b];
+			sumRTens = sumRTens + Connect.length();
+		}
+	}
+
+	cout << "Sum of the rest of Tens (21,22,23..29,31,32..) =  " << sumRTens << endl; //702
+
+	for (i = 0; i < 9; i++)
+		sumH = sumH + Hundred[i].length();
+
+	cout << "Sum of First Hundreds (100,200,300....) = " << sumH << endl;
+
+	for (int q = 0; q < 9; q++)
+	{
+		for (int w = 0; w < 9; w++)
+		{
+			Connect = Hundred[q] + Ones[w];
+			sumHWO = sumHWO + (Connect.length() + 3);
+		}
+
+	}
+	cout << "Sum of all hundreds with ones (101,102..109,201,202..209,301,302...) = " << sumHWO << endl;
+
+
+	for (i = 0; i < 9; i++) 
+	{
+		for (q = 0; q < 8; q++) 
+		{
+			for (int w = 0; w < 9; w++)
+			{
+				Connect = Hundred[i] + Tens[q] + Ones[w];
+				sumRestH = sumRestH + (Connect.length() + 3);
+			}
+		}
+	}
+
+	cout << "Sum of rest of hundreds with ones (121,122..129,131,132.. 139) = " << sumRestH << endl;
+
+
+	for (i = 0; i < 9; i++)
+	{
+		for (q = 0; q < 8; q++)
+		{
+			Connect = Hundred[i] + Tens[q];
+			sumHT = sumHT + (Connect.length() + 3);
+		}
+	}
+	cout << "Sum of hundreds with tens (120,130,140,...) = " << sumHT << endl;
+
+
+	for (i = 0; i < 9; i++)
+	{
+		for (q = 0; q < 10; q++)
+		{
+			Connect = Hundred[i] + FirstTens[q];
+			sumHFT = sumHFT + (Connect.length() + 3);
+		}
+	}
+	cout << "Sum of hundreds with First tens (110,111,112,...119) = " << sumHFT << endl;
+
+	Total = sumOnes + sumFTens + sumTens + sumRTens + sumH + sumHWO + sumHT + sumHFT + sumRestH + 11; 
+	cout <<  Total << endl;
+
+	return 0;
+}
