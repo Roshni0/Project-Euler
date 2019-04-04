@@ -1,0 +1,6 @@
+f=[1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880]
+sumi=0
+for n in range(3,10000000000):
+  if n==sum( f[int(d)] for d in str(n) ):
+    sumi= sumi + n
+print (s)
