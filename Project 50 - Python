@@ -1,5 +1,4 @@
-import time
-now = time.time()
+#a little inefficient
 def GenPrime(limit):
     a = [True] * limit
     a[0]=a[1]=False
@@ -30,5 +29,4 @@ for i in range(0, len(MaxList)):
         MaxSum-=MaxList[i]
     else:
         print(MaxSum)
-        print(time.time()-now)
         break
