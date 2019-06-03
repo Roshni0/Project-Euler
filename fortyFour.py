@@ -1,0 +1,17 @@
+def p44():
+    pentagonalList = {}
+    k = 1
+    while(k < 5000):
+        Pk = k * (3 * k - 1) // 2
+        pentagonalList[Pk] = True
+        m = 1
+        while(1):
+            Pj = 3 * m * k + m * (3 * m - 1) // 2
+            if Pj > Pk: break
+            if Pj in pentagonalList and (Pk - Pj) in pentagonalList:
+                print(Pk - Pj)
+                return 
+            m += 1
+        k += 1
+
+p44()
